@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<title>{% block title %}La Clé Discount{% endblock %}</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+{% block assets %}
+
+<link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+<!-- CSS -->
+<link rel="stylesheet" media="screen, print" href="{{ asset('assets/css/style.css') }}"/>
+<!-- Base -->
+<link rel="stylesheet" media="screen, print" href="{{ asset('assets/css/skeleton.css') }}"/>
+<!-- Responsive Lightbox -->
+<link rel="stylesheet" media="screen, print" href="{{ asset('assets/css/imagebox.css') }}"/>
+<!-- Flex Image Slider -->
+<link rel="stylesheet" media="screen, print" href="{{ asset('assets/css/flex-owl-slider.css') }}"/>
+<!-- Elastislider -->
+<link rel="stylesheet" media="screen, print" href="{{ asset('assets/css/carousel.css') }}"/>
+<!-- Image hover -->
+<link rel="stylesheet" media="screen, print" href="{{ asset('assets/css/fdw-demo.css') }}"/>
+<!-- Colorbox -->
+<link rel="stylesheet" media="screen, print" href="{{ asset('assets/css/colorbox.css') }}"/>
+<!-- Elements Styles -->
+<link rel="stylesheet" media="screen, print" href="{{ asset('assets/css/elements.css') }}"/>
+<!-- Navigation -->
+<link rel="stylesheet" media="screen, print" href="{{ asset('assets/css/superfish.css') }}"/>
+<!-- Color -->
+<link rel="stylesheet" media="screen, print" href="{{ asset('assets/css/gray-color.css') }}"/>
+<!-- Contact Form  -->
+<link rel="stylesheet" media="screen, print" href="{{ asset('assets/css/forms.css') }}"/>
+
+{% endblock %}
+
+<!-- Fonts -->
+<link href='http://fonts.googleapis.com/css?family=Arial:300italic,300,400,400italic,600,600italic,700,700italic|Open+Sans:300italic,300,400,400italic,600,600italic,700,700italic' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Bitter:400,400italic,700|Copse' rel='stylesheet' type='text/css'>
+</head>
+<body>
+<div class="bodywrapper">
+<!--   Header -->
+  <header>
+    <div class="row-1">
+      <div class="container">
+        <div class="sixteen columns">
+<!--           Logo -->
+          <div class="logo fleft">
+            <h1> <a href="#" title="La Clé Discount" rel="home"> La Clé Discount </a> </h1>
+          </div>
+        </div>
+        <div class="clear"></div>
+      </div>
+	  
+	  {% block menu %}
+	  
+	  {% endblock %}
+	  
+    </div>
+  </header>
+  
+  {% block body %}
+  
+  {% endblock %}
+  
+  <footer>
+    <div class="footer-1">
+      <div class="container">
+        <div class="wrapper">
+          <div class="columns four">
+            <a href="{{ path('cle_contact_mentions') }}"><h5>Mentions légales</h5></a>
+          </div>
+          <div class="columns four">
+            <a href="#"><h5>Forum</h5></a>
+          </div>
+          <div class="columns four">
+              <a href="{{ path('cle_contact_recrutement') }}"><h5>Recrutement</h5></a>
+          </div>
+          <div class="columns four">
+              <a href="{{ path('cle_contact_partenaires') }}"><h5>Partenaires</h5></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-2">
+      <div class="container">
+        <div class="eight columns">
+          <div id="copyright">&copy; Copyright 2013 by <span>LaCléDiscount</span>. Tous droits réservés.</div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- Footer End -->
+</div>
+
+{% block javascript %}
+
+<!-- Java Script -->
+<script type='text/javascript' src="{{ asset('assets/js/jquery.js') }}"></script>
+<script type='text/javascript' src="{{ asset('assets/js/jquery.easing.1.3.js') }}"></script>
+<!-- Navigation -->
+<script type='text/javascript' src="{{ asset('assets/js/jquery.responsivemenu.js') }}"></script>
+<script type='text/javascript' src="{{ asset('assets/js/superfish.js') }}"></script>
+<script type='text/javascript' src="{{ asset('assets/js/nav-small.js') }}"></script>
+<!-- Slider -->
+<script type='text/javascript' src="{{ asset('assets/js/jquery.flexslider.text.js') }}"></script>
+<script type='text/javascript' src="{{ asset('assets/js/jquery.flex-owl-slider-min.js') }}"></script>
+<script type='text/javascript' src="{{ asset('assets/js/jquery.elastislide.js') }}"></script>
+<!-- Imagehover -->
+<script type='text/javascript' src="{{ asset('assets/js/jquery-hover-effect.js') }}"></script>
+<!-- Colorbox -->
+<script type='text/javascript' src="{{ asset('assets/js/jquery.colorbox-min.js') }}"></script>
+<!-- Tooltip -->
+<script type='text/javascript' src="{{ asset('assets/js/tooltip.js') }}"></script>
+<script type='text/javascript' src="{{ asset('assets/js/jquery.tipsy.js') }}"></script>
+<script type='text/javascript' src="{{ asset('assets/js/jquery.ui.totop.js') }}"></script>
+<script type='text/javascript' src="{{ asset('assets/js/jquery.isotope.min.js') }}"></script>
+<script type='text/javascript' src="{{ asset('assets/js/popover.js') }}"></script>
+<script type='text/javascript' src="{{ asset('assets/js/imagebox.min.js') }}"></script>
+<!-- Form -->
+<script type='text/javascript' src="{{ asset('assets/js/forms.js') }}"></script>
+<!-- Script -->
+<script type='text/javascript' src="{{ asset('assets/js/script.js') }}"></script>
+<script type='text/javascript' src="{{ asset('assets/js/custom.js') }}"></script>
+
+{% endblock %}
+
+</body>
+</html>

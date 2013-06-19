@@ -1,0 +1,19 @@
+cle_catalogue_catalogue:
+    pattern:  /catalogue
+    defaults: { _controller: CleDiscountCatalogueBundle:Catalogue:catalogue }
+    
+cle_catalogue_quincaillerie:
+    pattern:  /quincaillerie
+    defaults: { _controller: CleDiscountCatalogueBundle:Catalogue:quincaillerie }
+    
+cle_catalogue_porteblindee:
+    pattern:  /porteblindee
+    defaults: { _controller: CleDiscountCatalogueBundle:Catalogue:porteblindee }
+    
+cle_catalogue_reproduction:
+    pattern:  /reproduction
+    defaults: { _controller: CleDiscountCatalogueBundle:Catalogue:reproduction }
+    
+cle_catalogue_produitshygiene:
+    pattern:  /produitshygiene
+    defaults: { _controller: CleDiscountCatalogueBundle:Catalogue:produitshygiene }

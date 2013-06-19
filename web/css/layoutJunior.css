@@ -1,0 +1,264 @@
+/* 
+    Document   : layout.css
+    Created on : 17 mai 2013, 10:59:53
+    Author     : claire
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { 
+    display: block;
+}
+
+
+
+/*html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}*/
+
+
+body
+{
+    background-color: #EEE;
+}
+
+/****************************************
+    HEADER
+*******************************************/
+#header
+{
+    background-color: #0088cc;
+    /*#CCC;*/
+    display:inline-block;
+    width:100%;
+}
+
+#logo
+{
+    float:left;
+    margin-left:2%;
+    color: #FFF;
+}
+
+#user-tools
+{
+    float:right;
+    color: white;
+    margin-right: 2%;
+}
+
+#user-tools a
+{
+    /*float:right;*/
+    color: #EEE;
+}
+
+hr
+{
+   border-bottom-color:  #0088cc;
+   border-top-color: #0088cc;
+}
+
+footer p
+{
+    margin-left:2%;
+}
+
+/****************************************
+    SIDE MENU
+*******************************************/
+
+#menu
+{
+    background-color: #EEE;
+}
+
+#menu li
+{
+    list-style-type: none;
+}
+
+
+/****************************************
+    CONTENT
+*******************************************/
+
+.corps
+{
+    margin-top: 1%;
+}
+
+#content
+{
+    background-color: #f5f5f5; 
+    /*#EEE;*/
+}
+
+a .button
+{
+    margin-bottom: 1%;
+}
+
+.bloc
+{
+    padding-bottom: 15px;
+    /*padding-top: 15px;*/
+}
+
+.content-bloc
+{
+    margin: 20px 0px;        /*top and bottom*/ 
+}
+
+
+/****************************************
+    DOCUMENTS DE REFERENCE
+ Mise en forme des docs de ref Junior : 
+ -> convention, fiche RF, bulletin indemnité, facture, suivi étudiant
+*******************************************/
+.docref h2
+{
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 60px;
+}
+
+.docref li
+{
+    list-style-type: none;
+}
+
+.en-tete
+{
+    margin-bottom: 50px;
+}
+
+
+
+/****************************************
+    LOGIN
+*******************************************/
+#foslogin
+{
+    width: 230px;
+    margin:auto;
+    margin-top: 5%;
+    margin-bottom: 7%;
+    padding: 1%;
+    padding-bottom: 0.1%;
+    /*text-align: center;*/
+    /*border: 1px solid black;*/
+    background-color: #0088cc;
+    font-weight: bolder;
+}
+
+#remember_me
+{
+    /*padding-right: 2%;*/
+    margin-right: 8%;
+}
+
+#foslogin label
+{
+    font-weight: bolder;
+    color: white;
+}
+
+#checkbox-login label
+{
+    font-weight: normal;
+}
+
+#_submit
+{
+    margin-top: 8%;
+    /*padding-bottom: 1%;*/
+}
+
+input:-webkit-autofill {
+        -webkit-box-shadow: 0 0 0px 1000px white inset;
+    }
+
+/****************************************
+    SURCHARGE BOOTSTRAP
+*******************************************/
+.input-prepend .add-on
+{
+    background-color: #CCC;
+}
+
+placeholder
+{
+    background-color: #BBB;
+}
+
+
+#prependedInput
+{
+    background-color: #FFF;
+}
+
+.table-striped th {
+    background-color: #0088cc;
+    color:#FFF;
+    /*#4EADCC;*/
+}
+
+.table-striped tbody > tr:nth-child(even) > th {
+background-color: #EEE;
+}
+
+.breadcrumb{
+    background-color: #EEE;
+}
+
+.nav-header
+{
+    font-size: 15px;
+}
+
+.wellLittle {
+  min-height: 20px;
+  padding: 19px;
+  margin-bottom: 20px;
+  min-width: 280px;
+  width:40%;
+  background-color: #EEE;
+  border: 1px solid #e3e3e3;
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+     -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+.well{
+ background-color: #EEE;
+}
+
+/****************************************
+    BOUTONS
+*******************************************/
+
+#validButton
+{
+    margin-top:10px;
+}

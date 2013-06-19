@@ -1,0 +1,15 @@
+cle_contact_contact:
+    pattern:  /contact
+    defaults: { _controller: CleDiscountCatalogueBundle:contact:contact }
+    
+cle_contact_mentions:
+    pattern:  /mentions
+    defaults: { _controller: CleDiscountCatalogueBundle:contact:mentions }
+    
+cle_contact_recrutement:
+    pattern:  /recrutement
+    defaults: { _controller: CleDiscountCatalogueBundle:contact:recrutement }
+    
+cle_contact_partenaires:
+    pattern:  /partenaires
+    defaults: { _controller: CleDiscountCatalogueBundle:contact:partenaires }

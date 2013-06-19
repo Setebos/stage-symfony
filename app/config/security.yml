@@ -1,0 +1,63 @@
+jms_security_extra:
+    secure_all_services: false
+    expressions: true
+
+security:
+    encoders:
+        Symfony\Component\Security\Core\User\User: plaintext
+        FOS\UserBundle\Model\UserInterface: sha512
+        Junior\UserBundle\Entity\Etudiant: sha512
+
+    role_hierarchy:
+        ROLE_ADMIN:       [ROLE_USER, ROLE_ETUDIANT, ROLE_GESTION]
+        ROLE_SUPER_ADMIN: [ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
+        
+
+    providers:
+        chain_provider:
+            chain:
+                providers: [gestion_provider, fos_userbundle, etudiant_provider]
+        gestion_provider:
+            memory:
+                users:
+                    gestion:  { password: gestion, roles: 'ROLE_GESTION'  }
+                    etudiant: { password: etudiant, roles: 'ROLE_ETUDIANT' }
+                    admin: { password: adminpass, roles: [ 'ROLE_ADMIN' ] }
+        fos_userbundle:
+            id: fos_user.user_provider.username
+        etudiant_provider:
+           entity: { class: Junior\EtudiantBundle\Entity\Etudiant, property: username }      
+
+
+    firewalls:
+            
+        main:
+          pattern:    ^/
+          anonymous: true
+          provider:  chain_provider
+          form_login:
+            success_handler: junior_etudiant.services.authentication.login_success_handler
+            login_path: fos_user_security_login
+            check_path: fos_user_security_check
+            use_referer:        true
+          logout:
+            path: fos_user_security_logout
+            target: /login
+#          remember_me:
+#            key: %secret%    
+#        
+
+        dev:
+            pattern:  ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+
+
+
+    access_control:
+        - { path: ^/login$, roles: IS_AUTHENTICATED_ANONYMOUSLY}
+#        - { path: ^/gestion/login$, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/etudiant/, role: ROLE_ETUDIANT }
+        - { path: ^/gestion/, role: ROLE_GESTION }
+        

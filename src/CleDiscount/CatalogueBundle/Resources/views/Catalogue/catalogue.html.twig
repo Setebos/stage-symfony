@@ -1,0 +1,78 @@
+{% extends "CleDiscountCatalogueBundle:Catalogue:layoutCatalogue.html.twig" %}
+
+{% block title %}
+    {{ parent()}} - Catalogue
+{% endblock %}
+    
+{% block content_catalogue %}
+  <div class="container">
+    <div class="sixteen columns">
+      <div class="breadcrumbs">
+          <p><span class="bread-home"><a href="{{ path('cle_accueil_index') }}">Accueil</a></span>Catalogue</p>
+      </div>
+    </div>
+  </div>
+  <!-- Slider -->
+  <div class="row-2">
+    <div class="container">
+      <div class="flexowlslider">
+        <ul class="owlslides">
+          <li><img src="{{asset('assets/images/slider-img/slide-1.png')}}" alt="">
+            <div class="owl-flex-caption">
+              <div class="owl-flex-bg">
+                <div class="owl-flex-border-1">
+                  <div class="owl-slide-text-1">Catalogue 2013</div>
+                  <div class="owl-slide-text-2">Accédez à une large variété de produits discount. <a class="owl-flex-slider-link" href="catalogue.html">Cliquez ici</a></div>
+                  <ul class="owl-slider-list-style">
+                    <li class="owl-slider-check-list-2"><a href="quincaillerie.html">Quincaillerie</a></li>
+                    <li class="owl-slider-check-list-2"><a href="porteblindee.html">Portes blindées</a></li>
+                    <li class="owl-slider-check-list-2"><a href="reproduction.html">Reproduction de clés</a></li>
+                    <li class="owl-slider-check-list-2"><a href="produitshygiene.html">Produits d'hygiène</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li><img src="{{asset('assets/images/slider-img/slide-2.png')}}" alt="">
+            <div class="owl-flex-caption">
+              <div class="owl-flex-bg">
+                <div class="owl-flex-border-1">
+                  <div class="owl-slide-text-1">Catalogue Pro</div>
+                  <div class="owl-slide-text-2">Un catalogue adapté aux besoins des professionnels. <a class="owl-flex-slider-link" href="#">Cliquez ici</a></div>
+                  <ul class="owl-slider-list-style">
+                    <li class="owl-slider-check-list-2"><a href="presentationpro.html">Accès Pro</a></li>
+                    <li class="owl-slider-check-list-2"><a href="inscriptionprivilege.html">Les listes Privilège</a></li>
+                    <li class="owl-slider-check-list-2"><a href="destockage.html">Destockage discount</a></li>
+                    <li class="owl-slider-check-list-2"><a href="objetspub.html">Objets publicitaires</a></li>
+                    <li class="owl-slider-check-list-2"><a href="produitsmoment.html">Les produits du moment</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li><img src="{{asset('assets/images/slider-img/slide-3.png')}}" alt="">
+            <div class="owl-flex-caption">
+              <div class="owl-flex-bg">
+                <div class="owl-flex-border-1">
+                  <div class="owl-slide-text-1">Le concept discount</div>
+                  <div class="owl-slide-text-2">Découvrez le concept derrière ce site. <a class="owl-flex-slider-link" href="concept.html">Cliquez ici</a></div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li><img src="{{asset('assets/images/slider-img/slide-4.png')}}" alt="">
+            <div class="owl-flex-caption">
+              <div class="owl-flex-bg">
+                <div class="owl-flex-border-1">
+                  <div class="owl-slide-text-1">Charte qualité</div>
+                  <div class="owl-slide-text-2">La Clé Discount s'engage à vous fournir le meilleur service. Découvrez notre charte qualité. <a class="owl-flex-slider-link" href="charte.html">Cliquez ici</a></div>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+    
+{% endblock %}

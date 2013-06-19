@@ -1,0 +1,16 @@
+{% extends "CleDiscountCatalogueBundle:Accueil:layoutAccueil.html.twig" %}
+
+{% block title %}
+    {{ parent()}} - Charte Qualité
+{% endblock %}
+    
+{% block content_accueil %}
+  <div class="container">
+    <div class="sixteen columns">
+      <div class="breadcrumbs">
+        <p><span class="bread-home"><a href="{{ path('cle_accueil_index') }}">Accueil</a></span>Charte Qualité</p>
+      </div>
+    </div>
+  </div>
+    
+{% endblock %}

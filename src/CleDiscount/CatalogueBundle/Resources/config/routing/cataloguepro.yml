@@ -1,0 +1,23 @@
+cle_cataloguepro_cataloguepro:
+    pattern:  /cataloguepro
+    defaults: { _controller: CleDiscountCatalogueBundle:Cataloguepro:cataloguepro }
+    
+cle_cataloguepro_presentationpro:
+    pattern:  /presentationpro
+    defaults: { _controller: CleDiscountCatalogueBundle:Cataloguepro:presentationpro }
+    
+cle_cataloguepro_inscriptionprivilege:
+    pattern:  /privilege
+    defaults: { _controller: CleDiscountCatalogueBundle:Cataloguepro:inscriptionprivilege }
+    
+cle_cataloguepro_destockage:
+    pattern:  /destockage
+    defaults: { _controller: CleDiscountCatalogueBundle:Cataloguepro:destockage }
+    
+cle_cataloguepro_objetspub:
+    pattern:  /objetspub
+    defaults: { _controller: CleDiscountCatalogueBundle:Cataloguepro:objetspub }
+    
+cle_cataloguepro_produitsmoment:
+    pattern:  /produitsmoment
+    defaults: { _controller: CleDiscountCatalogueBundle:Cataloguepro:produitsmoment }

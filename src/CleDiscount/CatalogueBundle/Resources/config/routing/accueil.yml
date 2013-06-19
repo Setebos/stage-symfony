@@ -1,0 +1,15 @@
+cle_accueil_index:
+    pattern:  /index
+    defaults: { _controller: CleDiscountCatalogueBundle:Accueil:index }
+
+cle_accueil_societe:
+    pattern:  /societe
+    defaults: { _controller: CleDiscountCatalogueBundle:Accueil:societe }
+    
+cle_accueil_concept:
+    pattern:  /concept
+    defaults: { _controller: CleDiscountCatalogueBundle:Accueil:concept }
+    
+cle_accueil_charte:
+    pattern:  /charte
+    defaults: { _controller: CleDiscountCatalogueBundle:Accueil:charte }

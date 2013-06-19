@@ -1,0 +1,7 @@
+parameters:
+#    cle_discount_catalogue.example.class: CleDiscount\CatalogueBundle\Example
+
+services:
+#    cle_discount_catalogue.example:
+#        class: %cle_discount_catalogue.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

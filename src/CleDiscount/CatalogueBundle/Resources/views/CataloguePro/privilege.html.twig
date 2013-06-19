@@ -1,0 +1,17 @@
+{% extends "CleDiscountCatalogueBundle:CataloguePro:layoutCataloguePro.html.twig" %}
+
+{% block title %}
+    {{ parent()}} - Listes Privilège
+{% endblock %}
+    
+{% block content_cataloguePro %}
+  <div class="container">
+    <div class="sixteen columns">
+      <div class="breadcrumbs">
+          <p><span class="bread-home"><a href="{{ path('cle_accueil_index') }}">Accueil</a></span><a href="{{ path('cle_cataloguepro_cataloguepro') }}">Catalogue Pro</a>Listes Privilège</p>
+      </div>
+    </div>
+  </div>
+
+    
+{% endblock %}

@@ -1,0 +1,63 @@
+{% extends "::layoutclediscount.html.twig"%}
+
+{% block title %}
+    {{parent()}} - Catalogue Pro
+{% endblock %}
+    
+{% block menu %}
+<div class="container">
+        <div class="sixteen columns">
+          <div class="row-3">
+<!--             menu -->
+            <nav  id = "main-nav-menu">
+                <ul class="sf-menu">
+                  <li><a href="{{ path('cle_accueil_index') }}">Accueil</a>
+                    <ul>
+                      <li><a href="{{ path('cle_accueil_societe') }}">Notre société</a></li>
+                      <li><a href="{{ path('cle_accueil_concept') }}">Le concept discount</a></li>
+                      <li><a href="{{ path('cle_accueil_charte') }}">Notre charte qualité</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="{{ path('cle_catalogue_catalogue') }}">Catalogue</a>
+                    <ul>
+                      <li><a href="{{ path('cle_catalogue_quincaillerie') }}">e-quincaillerie</a></li>
+                      <li><a href="{{ path('cle_catalogue_porteblindee') }}">e-porte blindée</a></li>
+                      <li><a href="{{ path('cle_catalogue_reproduction') }}">e-reproduction de clé</a></li>
+                      <li><a href="{{ path('cle_catalogue_produitshygiene') }}">e-produits d'hygiène</a></li>
+                    </ul>
+                  </li>
+                  <li class="active"><a href="{{ path('cle_cataloguepro_cataloguepro') }}">Catalogue Pro</a>
+                    <ul>
+                      <li><a href="{{ path('cle_cataloguepro_presentationpro') }}">Accès pro</a></li>
+                      <li><a href="{{ path('cle_cataloguepro_inscriptionprivilege') }}">Listes Privilège</a></li>
+                      <li><a href="{{ path('cle_cataloguepro_destockage') }}">Destockage discount</a></li>
+                      <li><a href="{{ path('cle_cataloguepro_objetspub') }}">Objets publicitaires</a></li>
+                      <li><a href="{{ path('cle_cataloguepro_produitsmoment') }}">Produits du moment</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="{{ path('cle_contact_contact') }}">Nous contacter</a></li>
+                </ul>
+            </nav>
+<!--             end menu -->
+            <select id = "responsive-main-nav-menu" onchange = "javascript:window.location.replace(this.value);">
+            </select>
+<!--             Search form -->
+            <form id="searchForm">
+              <fieldset>
+              <div class="input">
+                <input type="text" name="s" id="s" value="Recherche" />
+              </div>
+              <input type="submit" id="searchSubmit" value="" />
+              </fieldset>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="clear"></div>
+{% endblock %}
+      
+{% block body %}
+    {% block content_cataloguePro %}
+
+    {% endblock %}
+{% endblock %}
