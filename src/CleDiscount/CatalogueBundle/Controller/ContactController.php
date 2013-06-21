@@ -21,6 +21,10 @@ class ContactController extends Controller {
     public function partenairesAction() {
         return $this->render('CleDiscountCatalogueBundle:Contact:partenaires.html.twig');
     }  
+    
+    public function referencementAction() {
+        return $this->render('CleDiscountCatalogueBundle:Contact:referencement.html.twig');
+    }  
 }
 
 ?>

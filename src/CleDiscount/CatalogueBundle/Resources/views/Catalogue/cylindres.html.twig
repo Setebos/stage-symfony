@@ -1,0 +1,16 @@
+{% extends "CleDiscountCatalogueBundle:Catalogue:layoutCatalogue.html.twig" %}
+
+{% block title %}
+    {{ parent()}} - Cylindres - Barillets
+{% endblock %}
+    
+{% block content_catalogue %}
+  <div class="container">
+    <div class="sixteen columns">
+      <div class="breadcrumbs">
+          <p><span class="bread-home"><a href="{{ path('cle_accueil_index') }}">Accueil</a></span><a href="{{ path('cle_catalogue_catalogue') }}">Catalogue</a><a href="{{ path('cle_catalogue_quincaillerie') }}">Quincaillerie</a>Cylindres - Barillets</p>
+      </div>
+    </div>
+  </div>
+    
+{% endblock %}

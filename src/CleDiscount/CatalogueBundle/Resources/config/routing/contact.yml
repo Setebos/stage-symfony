@@ -13,3 +13,7 @@ cle_contact_recrutement:
 cle_contact_partenaires:
     pattern:  /partenaires
     defaults: { _controller: CleDiscountCatalogueBundle:contact:partenaires }
+    
+cle_contact_referencement:
+    pattern:  /referencement
+    defaults: { _controller: CleDiscountCatalogueBundle:contact:referencement }

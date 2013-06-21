@@ -17,3 +17,39 @@ cle_catalogue_reproduction:
 cle_catalogue_produitshygiene:
     pattern:  /produitshygiene
     defaults: { _controller: CleDiscountCatalogueBundle:Catalogue:produitshygiene }
+    
+cle_catalogue_cylindres:
+    pattern:  /quincaillerie/cylindres
+    defaults: { _controller: CleDiscountCatalogueBundle:Catalogue:cylindres }
+    
+cle_catalogue_monopoint:
+    pattern:  /quincaillerie/monopoint
+    defaults: { _controller: CleDiscountCatalogueBundle:Catalogue:monopoint }
+    
+cle_catalogue_multipoints:
+    pattern:  /quincaillerie/multipoints
+    defaults: { _controller: CleDiscountCatalogueBundle:Catalogue:multipoints }
+    
+cle_catalogue_verrous:
+    pattern:  /quincaillerie/verrous
+    defaults: { _controller: CleDiscountCatalogueBundle:Catalogue:verrous }
+    
+cle_catalogue_antieffraction:
+    pattern:  /quincaillerie/antieffraction
+    defaults: { _controller: CleDiscountCatalogueBundle:Catalogue:antieffraction }
+    
+cle_catalogue_accessoires:
+    pattern:  /quincaillerie/accessoires
+    defaults: { _controller: CleDiscountCatalogueBundle:Catalogue:accessoires }
+    
+cle_catalogue_lexique:
+    pattern:  /quincaillerie/lexique
+    defaults: { _controller: CleDiscountCatalogueBundle:Catalogue:lexique }
+    
+cle_catalogue_coffres:
+    pattern:  /quincaillerie/coffres
+    defaults: { _controller: CleDiscountCatalogueBundle:Catalogue:coffres }
+    
+cle_catalogue_fiches:
+    pattern:  /quincaillerie/fiches
+    defaults: { _controller: CleDiscountCatalogueBundle:Catalogue:fiches }
