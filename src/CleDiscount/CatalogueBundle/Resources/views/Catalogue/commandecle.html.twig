@@ -1,0 +1,50 @@
+{% extends "CleDiscountCatalogueBundle:Catalogue:layoutCatalogue.html.twig" %}
+
+{% block title %}
+    {{ parent()}} - Commande de Clés Brevetées
+{% endblock %}
+    
+{% block content_catalogue %}
+    
+  <div class="container">
+    <div class="sixteen columns">
+      <div class="breadcrumbs">
+          <p><span class="bread-home"><a href="{{ path('cle_accueil_index') }}">Accueil</a></span><a href="{{ path('cle_catalogue_catalogue') }}">Catalogue</a><a href="{{ path('cle_catalogue_reproduction') }}">Reproduction de Clés</a>Commande de Clé Brevetée</p>
+      </div>
+    </div>
+  </div>
+    
+    <div class="container">
+        <div class="sixteen columns">
+            <h4 class="headline3">Comment passer votre commande de clés brevetées ?</h4>
+            <h4 class="headline2">1 - Renseignements importants au sujet de votre clé</h4>
+            <p>
+                - Si la clé ouvre seulement le logement, il s’agit d’une clé brevetée "simple". <br/>
+                - Si la clé ouvre aussi des parties communes, il s’agite d’une clé brevetée "passe".
+            </p>
+            <h4 class="headline2">2 - Utilisez le carnet à souche fourni gracieusement sur demande</h4>
+            <p>
+                - La première page intégralement renseignée est à transmettre à LA CLE DISCOUNT.
+                - La seconde est pour le client final avec votre tampon.
+                - La troisième est votre exemplaire (pour le suivi).
+            </p>
+            <h4 class="headline2">3 - Faites une photocopie lisible de la carte de propriété</h4>
+            <p>
+                En cas de perte de celle-ci, prévenez votre client qu’elle lui sera probablement refacturée et avertissez-le du probable allongement des délais. Demandez-lui : 
+                - De remplir l’attestation sur l’honneur figurant sur le bon de commande.
+                - Une photocopie recto/verso de sa carte d’identité.
+                - Une facture EDF ou FRANCE TELECOM <strong>datant de moins de 3 mois</strong>.
+            </p>
+            <h4 class="headline2">4 - Soyez prudents sur les délais.</h4>
+            <p>Les délais sont différents selon les particularités de la clé, les fabricants et les périodes de l’année.</p>
+            <h4 class="headline2">5 - Prenez le numéro de téléphone de votre client.</h4>
+            <p>Pour d’éventuels renseignements complémentaires (certificat de sécurité, plan d’organigramme…) et pour l’informer de l’arrivée de sa clé.</p>
+            <h4 class="headline2">Important</h4>
+            <p>
+                Dès le traitement de votre commande, le service de clés brevetées vous adresse systématiquement (par fax, mail ou courrier) un accusé de commande pour contrôle du prix, du numéro de la clé…. (Délais de rectification ou d’annulation : 24h maximum) <br/>
+                A défaut de réception de cet accusé de commande dans un délai de 48h, nous vous prions de bien vouloir contacter le service.
+            </p>
+        </div>
+    </div>
+    
+{% endblock %}

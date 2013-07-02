@@ -10,20 +10,14 @@ class CatalogueController extends Controller {
         return $this->render('CleDiscountCatalogueBundle:Catalogue:catalogue.html.twig');
     }
     
+    /** QUINCAILLERIE **/
+    
     public function quincaillerieAction() {
         return $this->render('CleDiscountCatalogueBundle:Catalogue:quincaillerie.html.twig');
     }
     
     public function porteblindeeAction() {
         return $this->render('CleDiscountCatalogueBundle:Catalogue:porteblindee.html.twig');
-    }
-    
-    public function reproductionAction() {
-        return $this->render('CleDiscountCatalogueBundle:Catalogue:reproduction.html.twig');
-    }
-    
-    public function produitshygieneAction() {
-        return $this->render('CleDiscountCatalogueBundle:Catalogue:produitshygiene.html.twig');
     }
     
     public function cylindresAction() {
@@ -60,6 +54,42 @@ class CatalogueController extends Controller {
     
     public function fichesAction() {
         return $this->render('CleDiscountCatalogueBundle:Catalogue:fiches.html.twig');
+    }
+    
+    /** REPRODUCTION DE CLES **/
+    
+    public function reproductionAction() {
+        return $this->render('CleDiscountCatalogueBundle:Catalogue:reproduction.html.twig');
+    }
+    
+    public function doublesAction() {
+        return $this->render('CleDiscountCatalogueBundle:Catalogue:doubles.html.twig');
+    }
+    
+    public function clestechniquesAction() {
+        return $this->render('CleDiscountCatalogueBundle:Catalogue:clestechniques.html.twig');
+    }
+    
+    public function commandecleAction() {
+        return $this->render('CleDiscountCatalogueBundle:Catalogue:commandecle.html.twig');
+    }
+    
+    /** PRODUITS D'HYGIENE **/
+    
+    public function produitshygieneAction() {
+        return $this->render('CleDiscountCatalogueBundle:Catalogue:produitshygiene.html.twig');
+    }
+    
+    public function rongeursAction() {
+        return $this->render('CleDiscountCatalogueBundle:Catalogue:rongeurs.html.twig');
+    }
+    
+    public function insectesAction() {
+        return $this->render('CleDiscountCatalogueBundle:Catalogue:insectes.html.twig');
+    }
+    
+    public function hygieneautresAction() {
+        return $this->render('CleDiscountCatalogueBundle:Catalogue:hygieneautres.html.twig');
     }
 }
 

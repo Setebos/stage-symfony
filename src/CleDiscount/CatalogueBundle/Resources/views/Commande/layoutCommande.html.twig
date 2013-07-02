@@ -1,7 +1,7 @@
 {% extends "::layoutclediscount.html.twig"%}
 
 {% block title %}
-    {{parent()}} - Catalogue
+    {{parent()}} - Commande
 {% endblock %}
     
 {% block menu %}
@@ -18,7 +18,7 @@
                       <li><a href="{{ path('cle_accueil_charte') }}">Notre charte qualité</a></li>
                     </ul>
                   </li>
-                  <li class="active"><a href="{{ path('cle_catalogue_catalogue') }}">Catalogue</a>
+                  <li><a href="{{ path('cle_catalogue_catalogue') }}">Catalogue</a>
                     <ul>
                       <li><a href="{{ path('cle_catalogue_quincaillerie') }}">e-quincaillerie</a></li>
                       <li><a href="{{ path('cle_catalogue_porteblindee') }}">e-porte blindée</a></li>
@@ -35,7 +35,7 @@
                       <li><a href="{{ path('cle_cataloguepro_produitsmoment') }}">Produits du moment</a></li>
                     </ul>
                   </li>
-                  <li><a href="{{ path('cle_commande_commande') }}">Commande</a>
+                  <li class="active"><a href="{{ path('cle_commande_commande') }}">Commande</a>
                     <ul>
                       <li><a href="{{ path('cle_commande_panier') }}">Panier</a></li>
                       <li><a href="{{ path('cle_commande_faqcommande') }}">FAQ Commande</a></li>
@@ -68,7 +68,7 @@
 {% endblock %}
       
 {% block body %}
-    {% block content_catalogue %}
+    {% block content_commande %}
 
     {% endblock %}
 {% endblock %}

@@ -1,0 +1,11 @@
+cle_commande_commande:
+    pattern:  /commande
+    defaults: { _controller: CleDiscountCatalogueBundle:Commande:commande }
+
+cle_commande_panier:
+    pattern:  /commande/panier
+    defaults: { _controller: CleDiscountCatalogueBundle:Commande:panier }
+
+cle_commande_faqcommande:
+    pattern:  /commande/faq
+    defaults: { _controller: CleDiscountCatalogueBundle:Commande:faqcommande }

@@ -2,6 +2,8 @@ cle_catalogue_catalogue:
     pattern:  /catalogue
     defaults: { _controller: CleDiscountCatalogueBundle:Catalogue:catalogue }
     
+#QUINCAILLERIE
+    
 cle_catalogue_quincaillerie:
     pattern:  /quincaillerie
     defaults: { _controller: CleDiscountCatalogueBundle:Catalogue:quincaillerie }
@@ -9,14 +11,6 @@ cle_catalogue_quincaillerie:
 cle_catalogue_porteblindee:
     pattern:  /porteblindee
     defaults: { _controller: CleDiscountCatalogueBundle:Catalogue:porteblindee }
-    
-cle_catalogue_reproduction:
-    pattern:  /reproduction
-    defaults: { _controller: CleDiscountCatalogueBundle:Catalogue:reproduction }
-    
-cle_catalogue_produitshygiene:
-    pattern:  /produitshygiene
-    defaults: { _controller: CleDiscountCatalogueBundle:Catalogue:produitshygiene }
     
 cle_catalogue_cylindres:
     pattern:  /quincaillerie/cylindres
@@ -53,3 +47,39 @@ cle_catalogue_coffres:
 cle_catalogue_fiches:
     pattern:  /quincaillerie/fiches
     defaults: { _controller: CleDiscountCatalogueBundle:Catalogue:fiches }
+    
+#REPRODUCTION DE CLES
+
+cle_catalogue_reproduction:
+    pattern:  /reproduction
+    defaults: { _controller: CleDiscountCatalogueBundle:Catalogue:reproduction }
+    
+cle_catalogue_doubles:
+    pattern:  /reproduction/doubles
+    defaults: { _controller: CleDiscountCatalogueBundle:Catalogue:doubles }
+    
+cle_catalogue_clestechniques:
+    pattern:  /reproduction/clestechniques
+    defaults: { _controller: CleDiscountCatalogueBundle:Catalogue:clestechniques }
+    
+cle_catalogue_commandecle:
+    pattern:  /reproduction/commandecle
+    defaults: { _controller: CleDiscountCatalogueBundle:Catalogue:commandecle }
+    
+#PRODUITS D'HYGIENE
+
+cle_catalogue_produitshygiene:
+    pattern:  /hygiene
+    defaults: { _controller: CleDiscountCatalogueBundle:Catalogue:produitshygiene }
+
+cle_catalogue_rongeurs:
+    pattern:  /hygiene/rongeurs
+    defaults: { _controller: CleDiscountCatalogueBundle:Catalogue:rongeurs }
+    
+cle_catalogue_insectes:
+    pattern:  /hygiene/insectes
+    defaults: { _controller: CleDiscountCatalogueBundle:Catalogue:insectes }
+    
+cle_catalogue_hygieneautres:
+    pattern:  /hygiene/autres
+    defaults: { _controller: CleDiscountCatalogueBundle:Catalogue:hygieneautres }

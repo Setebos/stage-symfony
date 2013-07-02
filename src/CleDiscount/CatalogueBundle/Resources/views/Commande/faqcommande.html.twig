@@ -1,0 +1,56 @@
+{% extends "CleDiscountCatalogueBundle:Commande:layoutCommande.html.twig" %}
+
+{% block title %}
+    {{ parent()}} - FAQ Commande
+{% endblock %}
+    
+{% block content_commande %}
+    
+  <div class="container">
+    <div class="sixteen columns">
+      <div class="breadcrumbs">
+          <p><span class="bread-home"><a href="{{ path('cle_accueil_index') }}">Accueil</a></span><a href="{{ path('cle_commande_commande') }}">Commande</a>FAQ</p>
+      </div>
+    </div>
+  </div>
+    
+    <div class="container">
+        <div class="columns sixteen">
+            <h4 class="headline">FAQ Commande</h4>
+            <div id="accordion" class="faq-accordion"> 
+                <h4 class="headline2">Conditions de vente</h4>
+                <a><span class="qa">Q?</span><span class="qa-text">Question 1</span></a>
+                <div> <span class="qa">R.</span>
+                    <p> Réponse 1 </p>
+                </div>
+                <a><span class="qa">Q?</span><span class="qa-text">Question 2</span></a>
+                <div> <span class="qa">R.</span>
+                    <p> Réponse 2 </p>
+                </div>
+                <a><span class="qa">Q?</span><span class="qa-text">Question 3</span></a>
+                <div> <span class="qa">R.</span>
+                    <p> Réponse 3 </p>
+                </div>
+                <h4 class="headline2">Livraison</h4>
+                <a><span class="qa">Q?</span><span class="qa-text">Question 4</span></a>
+                <div> <span class="qa">R.</span>
+                    <p> Réponse 4 </p>
+                </div>
+                <a><span class="qa">Q?</span><span class="qa-text">Question 5</span></a>
+                <div> <span class="qa">R.</span>
+                    <p> Réponse 5 </p>
+                </div>
+                <h4 class="headline2">Règlement</h4>
+                <a><span class="qa">Q?</span><span class="qa-text">Question 6</span></a>
+                <div> <span class="qa">R.</span>
+                    <p> Réponse 6 </p>
+                </div>
+                <a><span class="qa">Q?</span><span class="qa-text">Question 7</span></a>
+                <div> <span class="qa">R.</span>
+                    <p> Réponse 7 </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+{% endblock %}

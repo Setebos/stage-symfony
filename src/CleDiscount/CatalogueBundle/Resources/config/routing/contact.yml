@@ -17,3 +17,12 @@ cle_contact_partenaires:
 cle_contact_referencement:
     pattern:  /referencement
     defaults: { _controller: CleDiscountCatalogueBundle:contact:referencement }
+    
+cle_contact_serviceclient:
+    pattern:  /contact/serviceclient
+    defaults: { _controller: CleDiscountCatalogueBundle:contact:serviceclient }
+    
+cle_contact_servicecommercial:
+    pattern:  /contact/servicecommercial
+    defaults: { _controller: CleDiscountCatalogueBundle:contact:servicecommercial }  
+  

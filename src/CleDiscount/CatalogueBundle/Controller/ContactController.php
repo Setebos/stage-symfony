@@ -25,6 +25,14 @@ class ContactController extends Controller {
     public function referencementAction() {
         return $this->render('CleDiscountCatalogueBundle:Contact:referencement.html.twig');
     }  
+    
+    public function serviceclientAction() {
+        return $this->render('CleDiscountCatalogueBundle:Contact:serviceclient.html.twig');
+    }  
+    
+    public function servicecommercialAction() {
+        return $this->render('CleDiscountCatalogueBundle:Contact:servicecommercial.html.twig');
+    }  
 }
 
 ?>
