@@ -10,10 +10,29 @@ class CatalogueController extends Controller {
         return $this->render('CleDiscountCatalogueBundle:Catalogue:catalogue.html.twig');
     }
     
+    /** AFFICHAGE PRODUIT **/
+    
+    public function produitAction($id, $famille, $categorie) {
+        $em = $this->getDoctrine()->getManager();
+        $article = $em->getRepository('CleDiscountCatalogueBundle:Article')->findOneById($id);
+        
+        return $this->render('CleDiscountCatalogueBundle:Catalogue:produit.html.twig', array('article' => $article));
+    }
+    
     /** QUINCAILLERIE **/
     
     public function quincaillerieAction() {
         return $this->render('CleDiscountCatalogueBundle:Catalogue:quincaillerie.html.twig');
+    }
+    
+    public function affichequincaillerieAction($categorie, $marque, $page) {
+        $articles = $this->getDoctrine()
+                 ->getManager()
+                 ->getRepository('CleDiscountCatalogueBundle:Article')
+                 ->getArticles(6, $page, $categorie, $marque);
+        //var_dump($articles);
+        
+        return $this->render('CleDiscountCatalogueBundle:Catalogue:affichequincaillerie.html.twig', array('marque' => $marque, 'categorie' => $categorie, 'articles' => $articles, 'page' => $page, 'nombrePage' => ceil(count($articles)/6)));
     }
     
     public function porteblindeeAction() {
@@ -28,8 +47,13 @@ class CatalogueController extends Controller {
         return $this->render('CleDiscountCatalogueBundle:Catalogue:monopoint.html.twig');
     }
     
-    public function multipointsAction() {
-        return $this->render('CleDiscountCatalogueBundle:Catalogue:multipoints.html.twig');
+    public function multipointsAction($page) {
+        $articles = $this->getDoctrine()
+                 ->getManager()
+                 ->getRepository('CleDiscountCatalogueBundle:Article')
+                 ->getArticles(6, $page, 'multipoints');
+            
+        return $this->render('CleDiscountCatalogueBundle:Catalogue:multipoints.html.twig', array('articles' => $articles, 'page' => $page, 'nombrePage' => ceil(count($articles)/6)));
     }
     
     public function verrousAction() {
@@ -78,6 +102,16 @@ class CatalogueController extends Controller {
     
     public function produitshygieneAction() {
         return $this->render('CleDiscountCatalogueBundle:Catalogue:produitshygiene.html.twig');
+    }
+    
+    public function affichehygieneAction($categorie, $marque, $page) {
+        $articles = $this->getDoctrine()
+                 ->getManager()
+                 ->getRepository('CleDiscountCatalogueBundle:Article')
+                 ->getArticles(6, $page, $categorie, $marque);
+        //var_dump($articles);
+        
+        return $this->render('CleDiscountCatalogueBundle:Catalogue:affichehygiene.html.twig', array('marque' => $marque, 'categorie' => $categorie, 'articles' => $articles, 'page' => $page, 'nombrePage' => ceil(count($articles)/6)));
     }
     
     public function rongeursAction() {

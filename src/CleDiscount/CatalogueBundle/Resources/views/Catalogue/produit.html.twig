@@ -1,0 +1,85 @@
+{% extends "CleDiscountCatalogueBundle:Catalogue:layoutCatalogue.html.twig" %}
+
+{% block title %}
+    {{ parent()}} - {{ article.famille }}
+{% endblock %}
+    
+{% block content_catalogue %}
+    <div class="container">
+        <div class="sixteen columns">
+            <div class="breadcrumbs">
+                <p>
+                    <span class="bread-home"><a href="{{ path('cle_accueil_index') }}">Accueil</a></span>
+                    <a href="{{ path('cle_catalogue_catalogue') }}">Catalogue</a>
+                    {% if article.famille == "quincaillerie" %}
+                        <a href="{{ path('cle_catalogue_quincaillerie') }}">Quincaillerie</a>
+                    {% endif %}
+                    {% if article.famille == "reproductioncles" %}
+                        <a href="{{ path('cle_catalogue_reproduction') }}">Reproduction de Clés</a>
+                    {% endif %}
+                    {% if article.famille == "hygiene" %}
+                        <a href="{{ path('cle_catalogue_produitshygiene') }}">Produits d'Hygiène</a>
+                    {% endif %}
+                    {% if article.famille == "porteblindee" %}
+                        <a href="{{ path('cle_catalogue_porteblindee') }}">Portes Blindées</a>
+                    {% endif %}
+                    {% if article.famille == "porteblindee" %}
+                        <a href="{{ path('cle_catalogue_porteblindee') }}">Portes Blindées</a>
+                    {% endif %}
+
+                    {% if article.categorie == "multipoints" %}
+                        <a href="{{ path('cle_catalogue_affichequincaillerie', {'categorie': 'multipoints'}) }}">Serrures Multipoints</a>
+                    {% endif %}
+                    {% if article.categorie == "monopoint" %}
+                        <a href="{{ path('cle_catalogue_affichequincaillerie', {'categorie': 'monopoint'}) }}">Serrures Monopoint</a>
+                    {% endif %}
+                    {% if article.categorie == "verrous" %}
+                        <a href="{{ path('cle_catalogue_affichequincaillerie', {'categorie': 'verrous'}) }}">Verrous et Poignées</a>
+                    {% endif %}
+                    {% if article.categorie == "cylindres" %}
+                        <a href="{{ path('cle_catalogue_affichequincaillerie', {'categorie': 'cylindres'}) }}">Cylindres / Barillets</a>
+                    {% endif %}
+                    {% if article.categorie == "antipanique" %}
+                        <a href="{{ path('cle_catalogue_affichequincaillerie', {'categorie': 'antipanique'}) }}">Anti-Panique</a>
+                    {% endif %}
+                    {% if article.categorie == "coffres" %}
+                        <a href="{{ path('cle_catalogue_affichequincaillerie', {'categorie': 'coffres'}) }}">Coffres-Forts</a>
+                    {% endif %}
+                    {% if article.categorie == "controleacces" %}
+                        <a href="{{ path('cle_catalogue_affichequincaillerie', {'categorie': 'controleacces'}) }}">Contrôle d'Accès</a>
+                    {% endif %}
+                    {% if article.categorie == "fermeportes" %}
+                        <a href="{{ path('cle_catalogue_affichequincaillerie', {'categorie': 'fermeportes'}) }}">Ferme-Portes</a>
+                    {% endif %}
+                    {% if article.categorie == "rongeurs" %}
+                        <a href="{{ path('cle_catalogue_affichehygiene', {'categorie': 'rongeurs'}) }}">Rongeurs</a>
+                    {% endif %}
+                    {% if article.categorie == "insectes" %}
+                        <a href="{{ path('cle_catalogue_affichehygiene', {'categorie': 'insectes'}) }}">Insectes</a>
+                    {% endif %}
+                    {% if article.categorie == "autres" %}
+                        <a href="{{ path('cle_catalogue_affichehygiene', {'categorie': 'autres'}) }}">Autres</a>
+                    {% endif %}
+                        
+                    {{ article.nom }}
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="six columns">
+            <img class="image-border" src="{{ article.image }}" alt="{{ article.nom }}" />
+        </div>
+        <div class="ten columns">
+            <h4 class="headline">{{ article.nom }}</h4>
+            <p>
+                Marque : {{ article.marque }} <br/>
+                Description : <br/>
+                {{ article.descriptif }} <br/>
+                Prix : {{ article.prixParticulier }} €
+            </p>
+        </div>
+    </div>
+    
+{% endblock %}

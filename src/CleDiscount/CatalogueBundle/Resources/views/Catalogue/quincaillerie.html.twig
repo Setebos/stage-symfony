@@ -30,30 +30,32 @@
                 <div class="widget">
                     <h5>Nos produits</h5>
                     <ul>
-                        <li><a title="Cylindres - Barillets" href="{{ path('cle_catalogue_cylindres') }}">Cylindres - Barillets</a></li>
-                        <li><a title="Serrures monopoint" href="{{ path('cle_catalogue_monopoint') }}">Serrures monopoint</a></li>
-                        <li><a title="Serrures multipoints" href="{{ path('cle_catalogue_multipoints') }}">Serrures multipoints</a></li>
-                        <li><a title="Verrous et poignées" href="{{ path('cle_catalogue_verrous') }}">Verrous et poignées</a></li>
-                        <li><a title="Systèmes anti-effraction" href="{{ path('cle_catalogue_antieffraction') }}">Systèmes anti-effraction</a></li>
-                        <li><a title="Accessoires" href="{{ path('cle_catalogue_coffres') }}">Coffres-forts</a></li>
+                        <li><a title="Cylindres - Barillets" href="{{ path('cle_catalogue_affichequincaillerie', {'categorie': 'cylindres'}) }}">Cylindres - Barillets</a></li>
+                        <li><a title="Serrures monopoint" href="{{ path('cle_catalogue_affichequincaillerie', {'categorie': 'monopoint'}) }}">Serrures monopoint</a></li>
+                        <li><a title="Serrures multipoints" href="{{ path('cle_catalogue_affichequincaillerie', {'categorie': 'multipoints'}) }}">Serrures multipoints</a></li>
+                        <li><a title="Verrous et poignées" href="{{ path('cle_catalogue_affichequincaillerie', {'categorie': 'verrous'}) }}">Verrous et poignées</a></li>
+                        <li><a title="Anti-panique" href="{{ path('cle_catalogue_affichequincaillerie', {'categorie': 'antipanique'}) }}">Anti-panique</a></li>
+                        <li><a title="Ferme-portes" href="{{ path('cle_catalogue_affichequincaillerie', {'categorie': 'fermeportes'}) }}">Ferme-portes</a></li>
+                        <li><a title="Contrôle d'accès" href="{{ path('cle_catalogue_affichequincaillerie', {'categorie': 'controleacces'}) }}">Contrôle d'accès</a></li>
+                        <li><a title="Coffres-forts" href="{{ path('cle_catalogue_affichequincaillerie', {'categorie': 'coffres'}) }}">Coffres-forts</a></li>
                     </ul>
                     <h5>Aide</h5>
                     <ul>
-                        <li><a title="Cylindres - Barillets" href="{{ path('cle_catalogue_lexique') }}">Lexique</a></li>
-                        <li><a title="Serrures monopoint" href="{{ path('cle_catalogue_fiches') }}">Fiches techniques</a></li>
+                        <li><a title="Lexique" href="{{ path('cle_catalogue_lexique') }}">Lexique</a></li>
+                        <li><a title="Fiches Techniques" href="{{ path('cle_catalogue_fiches') }}">Fiches techniques</a></li>
                     </ul>
                 </div>
             </div>
         </div>
     </div>
-    
+    {% set image = 'bundles/clediscountcatalogue/images/barillet-test.jpg' %}
   <div class="container">
     <h4 class="headline3">Cylindres - Barillets</h4>
     <div class="port-col4">
       <div id="portfolio-wrapper">
         <div class="four columns portfolio-item business">
           <ul class="item-img da-thumbs">
-            <li><img class="img_wrap1" src="{{ asset('bundles/clediscountcatalogue/images/barillet-test.jpg') }}" alt="">
+            <li><img class="img_wrap1" src="{{ asset(image) }}" alt="">
                 {#
               <article class="da-animate">
                 <h3>Project 1</h3>
@@ -256,7 +258,7 @@
     </div>
     <div class="sixteen columns">
       <div class="fright">
-          <a href="{{ path('cle_catalogue_multipoints') }}"  class="button button-border medium yellow"> Voir toutes nos serrures multipoints</a>
+          <a href="{{ path('cle_catalogue_multipoints', {'page': 1}) }}"  class="button button-border medium yellow"> Voir toutes nos serrures multipoints</a>
       </div>
     </div>
   </div>

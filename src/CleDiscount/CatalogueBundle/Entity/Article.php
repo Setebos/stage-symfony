@@ -1,0 +1,424 @@
+<?php
+
+namespace CleDiscount\CatalogueBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Article
+ *
+ * @ORM\Table()
+ * @ORM\Entity(repositoryClass="CleDiscount\CatalogueBundle\Entity\ArticleRepository")
+ */
+class Article
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="reference", type="string", length=255)
+     */
+    private $reference;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="famille", type="string", length=255)
+     */
+    private $famille;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="categorie", type="string", length=255)
+     */
+    private $categorie;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nom", type="string", length=255)
+     */
+    private $nom;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="descriptif", type="text")
+     */
+    private $descriptif;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="marque", type="string", length=255)
+     */
+    private $marque;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="image", type="string", length=1000, nullable=true)
+     */
+    private $image;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="video", type="string", length=1000, nullable=true)
+     */
+    private $video;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="prixAchat", type="float", nullable=true)
+     */
+    private $prixAchat;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="prixParticulier", type="float", nullable=true)
+     */
+    private $prixParticulier;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="prixPro", type="float", nullable=true)
+     */
+    private $prixPro;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="prixConcurrent", type="float", nullable=true)
+     */
+    private $prixConcurrent;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="delai", type="string", length=255, nullable=true)
+     */
+    private $delai;
+
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set reference
+     *
+     * @param string $reference
+     * @return Article
+     */
+    public function setReference($reference)
+    {
+        $this->reference = $reference;
+    
+        return $this;
+    }
+
+    /**
+     * Get reference
+     *
+     * @return string 
+     */
+    public function getReference()
+    {
+        return $this->reference;
+    }
+
+    /**
+     * Set famille
+     *
+     * @param string $famille
+     * @return Article
+     */
+    public function setFamille($famille)
+    {
+        $this->famille = $famille;
+    
+        return $this;
+    }
+
+    /**
+     * Get famille
+     *
+     * @return string 
+     */
+    public function getFamille()
+    {
+        return $this->famille;
+    }
+
+    /**
+     * Set categorie
+     *
+     * @param string $categorie
+     * @return Article
+     */
+    public function setCategorie($categorie)
+    {
+        $this->categorie = $categorie;
+    
+        return $this;
+    }
+
+    /**
+     * Get categorie
+     *
+     * @return string 
+     */
+    public function getCategorie()
+    {
+        return $this->categorie;
+    }
+
+    /**
+     * Set nom
+     *
+     * @param string $nom
+     * @return Article
+     */
+    public function setNom($nom)
+    {
+        $this->nom = $nom;
+    
+        return $this;
+    }
+
+    /**
+     * Get nom
+     *
+     * @return string 
+     */
+    public function getNom()
+    {
+        return $this->nom;
+    }
+
+    /**
+     * Set descriptif
+     *
+     * @param string $descriptif
+     * @return Article
+     */
+    public function setDescriptif($descriptif)
+    {
+        $this->descriptif = $descriptif;
+    
+        return $this;
+    }
+
+    /**
+     * Get descriptif
+     *
+     * @return string 
+     */
+    public function getDescriptif()
+    {
+        return $this->descriptif;
+    }
+
+    /**
+     * Set marque
+     *
+     * @param string $marque
+     * @return Article
+     */
+    public function setMarque($marque)
+    {
+        $this->marque = $marque;
+    
+        return $this;
+    }
+
+    /**
+     * Get marque
+     *
+     * @return string 
+     */
+    public function getMarque()
+    {
+        return $this->marque;
+    }
+
+    /**
+     * Set image
+     *
+     * @param string $image
+     * @return Article
+     */
+    public function setImage($image)
+    {
+        $this->image = $image;
+    
+        return $this;
+    }
+
+    /**
+     * Get image
+     *
+     * @return string 
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    /**
+     * Set video
+     *
+     * @param string $video
+     * @return Article
+     */
+    public function setVideo($video)
+    {
+        $this->video = $video;
+    
+        return $this;
+    }
+
+    /**
+     * Get video
+     *
+     * @return string 
+     */
+    public function getVideo()
+    {
+        return $this->video;
+    }
+
+    /**
+     * Set prixAchat
+     *
+     * @param float $prixAchat
+     * @return Article
+     */
+    public function setPrixAchat($prixAchat)
+    {
+        $this->prixAchat = $prixAchat;
+    
+        return $this;
+    }
+
+    /**
+     * Get prixAchat
+     *
+     * @return float 
+     */
+    public function getPrixAchat()
+    {
+        return $this->prixAchat;
+    }
+
+    /**
+     * Set prixParticulier
+     *
+     * @param float $prixParticulier
+     * @return Article
+     */
+    public function setPrixParticulier($prixParticulier)
+    {
+        $this->prixParticulier = $prixParticulier;
+    
+        return $this;
+    }
+
+    /**
+     * Get prixParticulier
+     *
+     * @return float 
+     */
+    public function getPrixParticulier()
+    {
+        return $this->prixParticulier;
+    }
+
+    /**
+     * Set prixPro
+     *
+     * @param float $prixPro
+     * @return Article
+     */
+    public function setPrixPro($prixPro)
+    {
+        $this->prixPro = $prixPro;
+    
+        return $this;
+    }
+
+    /**
+     * Get prixPro
+     *
+     * @return float 
+     */
+    public function getPrixPro()
+    {
+        return $this->prixPro;
+    }
+
+    /**
+     * Set prixConcurrent
+     *
+     * @param float $prixConcurrent
+     * @return Article
+     */
+    public function setPrixConcurrent($prixConcurrent)
+    {
+        $this->prixConcurrent = $prixConcurrent;
+    
+        return $this;
+    }
+
+    /**
+     * Get prixConcurrent
+     *
+     * @return float 
+     */
+    public function getPrixConcurrent()
+    {
+        return $this->prixConcurrent;
+    }
+
+    /**
+     * Set delai
+     *
+     * @param string $delai
+     * @return Article
+     */
+    public function setDelai($delai)
+    {
+        $this->delai = $delai;
+    
+        return $this;
+    }
+
+    /**
+     * Get delai
+     *
+     * @return string 
+     */
+    public function getDelai()
+    {
+        return $this->delai;
+    }
+}

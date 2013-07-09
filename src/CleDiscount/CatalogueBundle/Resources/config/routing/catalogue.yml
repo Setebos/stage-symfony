@@ -2,15 +2,21 @@ cle_catalogue_catalogue:
     pattern:  /catalogue
     defaults: { _controller: CleDiscountCatalogueBundle:Catalogue:catalogue }
     
+#AFFICHAGE PRODUIT
+
+cle_catalogue_produit:
+    pattern:  /{famille}/{categorie}/article/{id}
+    defaults: { _controller: CleDiscountCatalogueBundle:Catalogue:produit }
+
 #QUINCAILLERIE
     
 cle_catalogue_quincaillerie:
     pattern:  /quincaillerie
     defaults: { _controller: CleDiscountCatalogueBundle:Catalogue:quincaillerie }
     
-cle_catalogue_porteblindee:
-    pattern:  /porteblindee
-    defaults: { _controller: CleDiscountCatalogueBundle:Catalogue:porteblindee }
+cle_catalogue_affichequincaillerie:
+    pattern:  /quincaillerie/{categorie}/{marque}/{page}
+    defaults: { _controller: CleDiscountCatalogueBundle:Catalogue:affichequincaillerie, marque: tous, page: 1 }
     
 cle_catalogue_cylindres:
     pattern:  /quincaillerie/cylindres
@@ -21,7 +27,7 @@ cle_catalogue_monopoint:
     defaults: { _controller: CleDiscountCatalogueBundle:Catalogue:monopoint }
     
 cle_catalogue_multipoints:
-    pattern:  /quincaillerie/multipoints
+    pattern:  /quincaillerie/multipoints/{page}
     defaults: { _controller: CleDiscountCatalogueBundle:Catalogue:multipoints }
     
 cle_catalogue_verrous:
@@ -71,6 +77,10 @@ cle_catalogue_commandecle:
 cle_catalogue_produitshygiene:
     pattern:  /hygiene
     defaults: { _controller: CleDiscountCatalogueBundle:Catalogue:produitshygiene }
+    
+cle_catalogue_affichehygiene:
+    pattern:  /hygiene/{categorie}/{marque}/{page}
+    defaults: { _controller: CleDiscountCatalogueBundle:Catalogue:affichehygiene, marque: tous, page: 1 }
 
 cle_catalogue_rongeurs:
     pattern:  /hygiene/rongeurs
@@ -83,3 +93,9 @@ cle_catalogue_insectes:
 cle_catalogue_hygieneautres:
     pattern:  /hygiene/autres
     defaults: { _controller: CleDiscountCatalogueBundle:Catalogue:hygieneautres }
+    
+#PORTE BLINDEE
+
+cle_catalogue_porteblindee:
+    pattern:  /porteblindee
+    defaults: { _controller: CleDiscountCatalogueBundle:Catalogue:porteblindee }

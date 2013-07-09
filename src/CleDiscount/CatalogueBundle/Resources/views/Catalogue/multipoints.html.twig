@@ -13,4 +13,35 @@
     </div>
   </div>
     
+    <div class="container">
+        {% for article in articles %}
+            <div class="four columns">
+                <img class="image-border" src="{{ article.image }}" alt="{{ article.nom }}" />
+            </div>
+            <div class="eleven columns">
+                <h4 class="headline">{{ article.nom }}</h4>
+                <p>
+                    Marque : {{ article.marque }} <br/>
+                    Prix : {{ article.prixParticulier }} €
+                </p>
+            </div>
+        <div class="sixteen columns">
+            <div class="separator"></div>
+        </div>              
+        {% endfor %}
+
+        <div class="sixteen columns">
+            <div class="pagination">
+                <ul>
+                    {# On utilise la fonction range(a, b) qui crée un tableau de valeurs entre a et b #}
+                    {% for p in range(1, nombrePage) %}
+                        <li{% if p == page %} class="active"{% endif %}>
+                            <a href="{{ path('cle_catalogue_multipoints', {'page': p}) }}">{{ p }}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>  
+        </div>
+    </div>
+    
 {% endblock %}
