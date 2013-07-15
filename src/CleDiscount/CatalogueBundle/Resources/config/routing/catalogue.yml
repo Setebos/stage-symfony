@@ -2,6 +2,12 @@ cle_catalogue_catalogue:
     pattern:  /catalogue
     defaults: { _controller: CleDiscountCatalogueBundle:Catalogue:catalogue }
     
+#RECHERCHE
+
+cle_catalogue_recherche:
+    pattern:  /recherche/{recherche}/{page}
+    defaults: { _controller: CleDiscountCatalogueBundle:Catalogue:recherche, recherche: rien, page: 1 }
+    
 #AFFICHAGE PRODUIT
 
 cle_catalogue_produit:
@@ -13,6 +19,10 @@ cle_catalogue_produit:
 cle_catalogue_quincaillerie:
     pattern:  /quincaillerie
     defaults: { _controller: CleDiscountCatalogueBundle:Catalogue:quincaillerie }
+    
+cle_catalogue_lexique:
+    pattern:  /quincaillerie/lexique
+    defaults: { _controller: CleDiscountCatalogueBundle:Catalogue:lexique }
     
 cle_catalogue_affichequincaillerie:
     pattern:  /quincaillerie/{categorie}/{marque}/{page}
@@ -41,10 +51,6 @@ cle_catalogue_antieffraction:
 cle_catalogue_accessoires:
     pattern:  /quincaillerie/accessoires
     defaults: { _controller: CleDiscountCatalogueBundle:Catalogue:accessoires }
-    
-cle_catalogue_lexique:
-    pattern:  /quincaillerie/lexique
-    defaults: { _controller: CleDiscountCatalogueBundle:Catalogue:lexique }
     
 cle_catalogue_coffres:
     pattern:  /quincaillerie/coffres

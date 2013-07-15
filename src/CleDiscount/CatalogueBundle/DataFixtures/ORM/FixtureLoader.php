@@ -35,6 +35,7 @@ class FixtureLoader implements FixtureInterface, ContainerAwareInterface {
         $a1->setPrixParticulier('90');
         $a1->setPrixPro('60');
         $a1->setImage('http://www.castorama.fr/images/products/h/h_162084.jpg');
+        $a1->setFocus('Oui');
         
         $a2 = new Article();
         $a2->setReference('Q4567');
@@ -47,6 +48,7 @@ class FixtureLoader implements FixtureInterface, ContainerAwareInterface {
         $a2->setPrixParticulier('120');
         $a2->setPrixPro('90');
         $a2->setImage('http://www.castorama.fr/images/products/h/h_162084.jpg');
+        $a2->setFocus('Non');
         
         $a3 = new Article();
         $a3->setReference('Q8757');
@@ -59,6 +61,7 @@ class FixtureLoader implements FixtureInterface, ContainerAwareInterface {
         $a3->setPrixParticulier('120');
         $a3->setPrixPro('90');
         $a3->setImage('http://www.castorama.fr/images/products/h/h_162084.jpg');
+        $a3->setFocus('Oui');
         
         $a4 = new Article();
         $a4->setReference('Q976');
@@ -71,6 +74,7 @@ class FixtureLoader implements FixtureInterface, ContainerAwareInterface {
         $a4->setPrixParticulier('60');
         $a4->setPrixPro('40');
         $a4->setImage('http://www.castorama.fr/images/products/h/h_162084.jpg');
+        $a4->setFocus('Oui');
         
         $a5 = new Article();
         $a5->setReference('Q765');
@@ -83,6 +87,7 @@ class FixtureLoader implements FixtureInterface, ContainerAwareInterface {
         $a5->setPrixParticulier('120');
         $a5->setPrixPro('90');
         $a5->setImage('http://www.castorama.fr/images/products/h/h_162084.jpg');
+        $a5->setFocus('Non');
         
         $a6 = new Article();
         $a6->setReference('Q47885');
@@ -95,6 +100,7 @@ class FixtureLoader implements FixtureInterface, ContainerAwareInterface {
         $a6->setPrixParticulier('90');
         $a6->setPrixPro('60');
         $a6->setImage('http://www.castorama.fr/images/products/h/h_162084.jpg');
+        $a6->setFocus('Oui');
         
         $a7 = new Article();
         $a7->setReference('Q8757');
@@ -107,6 +113,7 @@ class FixtureLoader implements FixtureInterface, ContainerAwareInterface {
         $a7->setPrixParticulier('90');
         $a7->setPrixPro('60');
         $a7->setImage('http://www.castorama.fr/images/products/h/h_162084.jpg');
+        $a7->setFocus('Non');
         
         $manager->persist($a1);
         $manager->persist($a2);

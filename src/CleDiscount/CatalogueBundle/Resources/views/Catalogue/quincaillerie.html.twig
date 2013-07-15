@@ -48,6 +48,7 @@
             </div>
         </div>
     </div>
+    
     {% set image = 'bundles/clediscountcatalogue/images/barillet-test.jpg' %}
   <div class="container">
     <h4 class="headline3">Cylindres - Barillets</h4>
@@ -56,11 +57,9 @@
         <div class="four columns portfolio-item business">
           <ul class="item-img da-thumbs">
             <li><img class="img_wrap1" src="{{ asset(image) }}" alt="">
-                {#
               <article class="da-animate">
                 <h3>Project 1</h3>
                 <em>project sub title</em> <span class="link_post"><a href="#"></a></span> <span class="zoom"><a class="group1" data-rel='hi' href="../assets/images/portfolio/port-1.jpg" title=""></a></span> </article>
-                #}
             </li>
           </ul>
           <div class="portfolio-item-meta">
@@ -118,7 +117,7 @@
     </div>
     <div class="sixteen columns">
       <div class="fright">
-          <a href="{{ path('cle_catalogue_cylindres') }}"  class="button button-border medium yellow"> Voir tous nos cylindres et barillets </a>
+          <a href="{{ path('cle_catalogue_affichequincaillerie', {'categorie': 'cylindres'}) }}"  class="button button-border medium yellow"> Voir tous nos cylindres et barillets </a>
       </div>
     </div>
   </div>
@@ -130,11 +129,9 @@
         <div class="four columns portfolio-item business">
           <ul class="item-img da-thumbs">
             <li><img class="img_wrap1" src="{{ asset('assets/images/portfolio/port-1.jpg') }}" alt="">
-                {#
               <article class="da-animate">
                 <h3>Project 1</h3>
                 <em>project sub title</em> <span class="link_post"><a href="#"></a></span> <span class="zoom"><a class="group1" data-rel='hi' href="../assets/images/portfolio/port-1.jpg" title=""></a></span> </article>
-                #}
             </li>
           </ul>
           <div class="portfolio-item-meta">
@@ -188,7 +185,7 @@
     </div>
     <div class="sixteen columns">
       <div class="fright">
-          <a href="{{ path('cle_catalogue_monopoint') }}"  class="button button-border medium yellow"> Voir toutes nos serrures monopoint</a>
+          <a href="{{ path('cle_catalogue_affichequincaillerie', {'categorie': 'monopoint'}) }}"  class="button button-border medium yellow"> Voir toutes nos serrures monopoint</a>
       </div>
     </div>
   </div>
@@ -197,21 +194,26 @@
     <h4 class="headline3">Serrures multipoints</h4>
     <div class="port-col4">
       <div id="portfolio-wrapper">
+        {% for article in focusMultipoints %}
         <div class="four columns portfolio-item business">
           <ul class="item-img da-thumbs">
-            <li><img class="img_wrap1" src="{{ asset('assets/images/portfolio/port-1.jpg') }}" alt="">
-                {#
+            <li><img class="img_wrap1" src="{{ article.image }}" alt="">
               <article class="da-animate">
-                <h3>Project 1</h3>
-                <em>project sub title</em> <span class="link_post"><a href="#"></a></span> <span class="zoom"><a class="group1" data-rel='hi' href="../assets/images/portfolio/port-1.jpg" title=""></a></span> </article>
-                #}
+                <h3>{{ article.nom }}</h3>
+                <span class="zoom"><a href="{{ path('cle_catalogue_produit', {'famille': article.famille, 'categorie': article.categorie, 'id': article.id}) }}"></a></span>
             </li>
           </ul>
           <div class="portfolio-item-meta">
-            <h5><a href="#" title="Item 1" rel="bookmark"> Item 1 </a></h5>
-            <p>Nam adipiscing felis ac tellus pellentesque porta. Nullam et augue augue. Vestibulum pharetra purus vel. Ultricies sed leo. Vestibulum ante</p>
+            <h5><a href="{{ path('cle_catalogue_produit', {'famille': article.famille, 'categorie': article.categorie, 'id': article.id}) }}" title="{{ article.nom }}" rel="bookmark"> {{ article.nom }} </a></h5>
+            <ul>
+                <li>Référence : {{article.reference}}</li>
+                <li>Marque : {{article.marque}}</li>
+                <li>Prix de vente particulier : {{article.prixParticulier}} €</li>
+            </ul>
           </div>
         </div>
+        {% endfor %}
+        {#
         <!-- Port 2 -->
         <div class="four columns portfolio-item business">
           <ul class="item-img da-thumbs">
@@ -254,11 +256,12 @@
             <p>Nam adipiscing felis ac tellus pellentesque porta. Nullam et augue augue. Vestibulum pharetra purus vel. Ultricies sed leo. Vestibulum ante</p>
           </div>
         </div>
+        #}
       </div>
     </div>
     <div class="sixteen columns">
       <div class="fright">
-          <a href="{{ path('cle_catalogue_multipoints', {'page': 1}) }}"  class="button button-border medium yellow"> Voir toutes nos serrures multipoints</a>
+          <a href="{{ path('cle_catalogue_affichequincaillerie', {'categorie': 'multipoints'}) }}"  class="button button-border medium yellow"> Voir toutes nos serrures multipoints</a>
       </div>
     </div>
   </div>
@@ -270,11 +273,9 @@
         <div class="four columns portfolio-item business">
           <ul class="item-img da-thumbs">
             <li><img class="img_wrap1" src="{{ asset('assets/images/portfolio/port-1.jpg') }}" alt="">
-                {#
               <article class="da-animate">
                 <h3>Project 1</h3>
                 <em>project sub title</em> <span class="link_post"><a href="#"></a></span> <span class="zoom"><a class="group1" data-rel='hi' href="../assets/images/portfolio/port-1.jpg" title=""></a></span> </article>
-                #}
             </li>
           </ul>
           <div class="portfolio-item-meta">
@@ -328,23 +329,21 @@
     </div>
     <div class="sixteen columns">
       <div class="fright">
-          <a href="{{ path('cle_catalogue_verrous') }}"  class="button button-border medium yellow"> Voir tous nos verrous et poignées</a>
+          <a href="{{ path('cle_catalogue_affichequincaillerie', {'categorie': 'verrous'}) }}"  class="button button-border medium yellow"> Voir tous nos verrous et poignées</a>
       </div>
     </div>
   </div>
     
   <div class="container">
-    <h4 class="headline3">Systèmes anti-effraction</h4>
+    <h4 class="headline3">Anti-panique</h4>
     <div class="port-col4">
       <div id="portfolio-wrapper">
         <div class="four columns portfolio-item business">
           <ul class="item-img da-thumbs">
             <li><img class="img_wrap1" src="{{ asset('assets/images/portfolio/port-1.jpg') }}" alt="">
-                {#
               <article class="da-animate">
                 <h3>Project 1</h3>
                 <em>project sub title</em> <span class="link_post"><a href="#"></a></span> <span class="zoom"><a class="group1" data-rel='hi' href="../assets/images/portfolio/port-1.jpg" title=""></a></span> </article>
-                #}
             </li>
           </ul>
           <div class="portfolio-item-meta">
@@ -398,7 +397,7 @@
     </div>
     <div class="sixteen columns">
       <div class="fright">
-          <a href="{{ path('cle_catalogue_antieffraction') }}"  class="button button-border medium yellow"> Voir tous nos systèmes anti-effraction</a>
+          <a href="{{ path('cle_catalogue_affichequincaillerie', {'categorie': 'antipanique'}) }}"  class="button button-border medium yellow"> Voir tous nos systèmes anti-panique</a>
       </div>
     </div>
   </div>
@@ -410,11 +409,9 @@
         <div class="four columns portfolio-item business">
           <ul class="item-img da-thumbs">
             <li><img class="img_wrap1" src="{{ asset('assets/images/portfolio/port-1.jpg') }}" alt="">
-                {#
               <article class="da-animate">
                 <h3>Project 1</h3>
                 <em>project sub title</em> <span class="link_post"><a href="#"></a></span> <span class="zoom"><a class="group1" data-rel='hi' href="../assets/images/portfolio/port-1.jpg" title=""></a></span> </article>
-                #}
             </li>
           </ul>
           <div class="portfolio-item-meta">
@@ -468,11 +465,146 @@
     </div>
     <div class="sixteen columns">
       <div class="fright">
-          <a href="{{ path('cle_catalogue_accessoires') }}"  class="button button-border medium yellow"> Voir tous nos coffres-forts</a>
+          <a href="{{ path('cle_catalogue_affichequincaillerie', {'categorie': 'coffres'}) }}"  class="button button-border medium yellow"> Voir tous nos coffres-forts</a>
       </div>
     </div>
   </div>
     
+  <div class="container">
+    <h4 class="headline3">Ferme-portes</h4>
+    <div class="port-col4">
+      <div id="portfolio-wrapper">
+        <div class="four columns portfolio-item business">
+          <ul class="item-img da-thumbs">
+            <li><img class="img_wrap1" src="{{ asset('assets/images/portfolio/port-1.jpg') }}" alt="">
+              <article class="da-animate">
+                <h3>Project 1</h3>
+                <em>project sub title</em> <span class="link_post"><a href="#"></a></span> <span class="zoom"><a class="group1" data-rel='hi' href="../assets/images/portfolio/port-1.jpg" title=""></a></span> </article>
+            </li>
+          </ul>
+          <div class="portfolio-item-meta">
+            <h5><a href="#" title="Item 1" rel="bookmark"> Item 1 </a></h5>
+            <p>Nam adipiscing felis ac tellus pellentesque porta. Nullam et augue augue. Vestibulum pharetra purus vel. Ultricies sed leo. Vestibulum ante</p>
+          </div>
+        </div>
+        <!-- Port 2 -->
+        <div class="four columns portfolio-item business">
+          <ul class="item-img da-thumbs">
+            <li><img class="img_wrap1" src="{{ asset('assets/images/portfolio/port-1.jpg') }}" alt="">
+              <article class="da-animate">
+                <h3>Project 1</h3>
+                <em>project sub title</em> <span class="link_post"><a href="portfolio-single.html"></a></span> <span class="zoom"><a class="group1" data-rel='hi' href="../assets/images/portfolio/port-2.jpg" title=""></a></span> </article>
+            </li>
+          </ul>
+          <div class="portfolio-item-meta">
+            <h5><a href="#" title="Permalink to Project Title 2" rel="bookmark"> Item 2 </a></h5>
+            <p>Nam adipiscing felis ac tellus pellentesque porta. Nullam et augue augue. Vestibulum pharetra purus vel. Ultricies sed leo. Vestibulum ante</p>
+          </div>
+        </div>
+        <!-- Port 3 -->
+        <div class="four columns portfolio-item html">
+          <ul class="item-img da-thumbs">
+            <li><img class="img_wrap1" src="{{ asset('assets/images/portfolio/port-1.jpg') }}" alt="">
+              <article class="da-animate">
+                <h3>Project 1</h3>
+                <em>project sub title</em> <span class="link_post"><a href="#"></a></span> <span class="zoom"><a class="group1" data-rel='hi' href="../assets/images/portfolio/port-3.jpg" title=""></a></span> </article>
+            </li>
+          </ul>
+          <div class="portfolio-item-meta">
+            <h5><a href="#" title="Permalink to Project Title 3" rel="bookmark"> Item 3 </a></h5>
+            <p>Nam adipiscing felis ac tellus pellentesque porta. Nullam et augue augue. Vestibulum pharetra purus vel. Ultricies sed leo. Vestibulum ante</p>
+          </div>
+        </div>
+        <!-- Port 4 -->
+        <div class="four columns portfolio-item html">
+          <ul class="item-img da-thumbs">
+            <li><img class="img_wrap1" src="{{ asset('assets/images/portfolio/port-1.jpg') }}" alt="">
+              <article class="da-animate">
+                <h3>Project 1</h3>
+                <em>project sub title</em> <span class="link_post"><a href="#"></a></span> <span class="zoom"><a class="group1" data-rel='hi' href="../assets/images/portfolio/port-4.jpg" title=""></a></span> </article>
+            </li>
+          </ul>
+          <div class="portfolio-item-meta">
+            <h5><a href="#" title="Permalink to Project Title 4" rel="bookmark"> Item 4 </a></h5>
+            <p>Nam adipiscing felis ac tellus pellentesque porta. Nullam et augue augue. Vestibulum pharetra purus vel. Ultricies sed leo. Vestibulum ante</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="sixteen columns">
+      <div class="fright">
+          <a href="{{ path('cle_catalogue_affichequincaillerie', {'categorie': 'fermeportes'}) }}"  class="button button-border medium yellow"> Voir tous nos ferme-portes</a>
+      </div>
+    </div>
+  </div>
+    
+  <div class="container">
+    <h4 class="headline3">Contrôle d'accès</h4>
+    <div class="port-col4">
+      <div id="portfolio-wrapper">
+        <div class="four columns portfolio-item business">
+          <ul class="item-img da-thumbs">
+            <li><img class="img_wrap1" src="{{ asset('assets/images/portfolio/port-1.jpg') }}" alt="">
+              <article class="da-animate">
+                <h3>Project 1</h3>
+                <em>project sub title</em> <span class="link_post"><a href="#"></a></span> <span class="zoom"><a class="group1" data-rel='hi' href="../assets/images/portfolio/port-1.jpg" title=""></a></span> </article>
+            </li>
+          </ul>
+          <div class="portfolio-item-meta">
+            <h5><a href="#" title="Item 1" rel="bookmark"> Item 1 </a></h5>
+            <p>Nam adipiscing felis ac tellus pellentesque porta. Nullam et augue augue. Vestibulum pharetra purus vel. Ultricies sed leo. Vestibulum ante</p>
+          </div>
+        </div>
+        <!-- Port 2 -->
+        <div class="four columns portfolio-item business">
+          <ul class="item-img da-thumbs">
+            <li><img class="img_wrap1" src="{{ asset('assets/images/portfolio/port-1.jpg') }}" alt="">
+              <article class="da-animate">
+                <h3>Project 1</h3>
+                <em>project sub title</em> <span class="link_post"><a href="portfolio-single.html"></a></span> <span class="zoom"><a class="group1" data-rel='hi' href="../assets/images/portfolio/port-2.jpg" title=""></a></span> </article>
+            </li>
+          </ul>
+          <div class="portfolio-item-meta">
+            <h5><a href="#" title="Permalink to Project Title 2" rel="bookmark"> Item 2 </a></h5>
+            <p>Nam adipiscing felis ac tellus pellentesque porta. Nullam et augue augue. Vestibulum pharetra purus vel. Ultricies sed leo. Vestibulum ante</p>
+          </div>
+        </div>
+        <!-- Port 3 -->
+        <div class="four columns portfolio-item html">
+          <ul class="item-img da-thumbs">
+            <li><img class="img_wrap1" src="{{ asset('assets/images/portfolio/port-1.jpg') }}" alt="">
+              <article class="da-animate">
+                <h3>Project 1</h3>
+                <em>project sub title</em> <span class="link_post"><a href="#"></a></span> <span class="zoom"><a class="group1" data-rel='hi' href="../assets/images/portfolio/port-3.jpg" title=""></a></span> </article>
+            </li>
+          </ul>
+          <div class="portfolio-item-meta">
+            <h5><a href="#" title="Permalink to Project Title 3" rel="bookmark"> Item 3 </a></h5>
+            <p>Nam adipiscing felis ac tellus pellentesque porta. Nullam et augue augue. Vestibulum pharetra purus vel. Ultricies sed leo. Vestibulum ante</p>
+          </div>
+        </div>
+        <!-- Port 4 -->
+        <div class="four columns portfolio-item html">
+          <ul class="item-img da-thumbs">
+            <li><img class="img_wrap1" src="{{ asset('assets/images/portfolio/port-1.jpg') }}" alt="">
+              <article class="da-animate">
+                <h3>Project 1</h3>
+                <em>project sub title</em> <span class="link_post"><a href="#"></a></span> <span class="zoom"><a class="group1" data-rel='hi' href="../assets/images/portfolio/port-4.jpg" title=""></a></span> </article>
+            </li>
+          </ul>
+          <div class="portfolio-item-meta">
+            <h5><a href="#" title="Permalink to Project Title 4" rel="bookmark"> Item 4 </a></h5>
+            <p>Nam adipiscing felis ac tellus pellentesque porta. Nullam et augue augue. Vestibulum pharetra purus vel. Ultricies sed leo. Vestibulum ante</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="sixteen columns">
+      <div class="fright">
+          <a href="{{ path('cle_catalogue_affichequincaillerie', {'categorie': 'controleacces'}) }}"  class="button button-border medium yellow"> Voir tous nos systèmes de contrôle d'accès</a>
+      </div>
+    </div>
+  </div>
 
     
 {% endblock %}

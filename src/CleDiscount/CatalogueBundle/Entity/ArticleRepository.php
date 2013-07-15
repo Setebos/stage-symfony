@@ -44,4 +44,37 @@ class ArticleRepository extends EntityRepository
 
         return new Paginator($query);
       }
+      
+      public function getArticlesFocus($categorie) {
+            $query = $this->createQueryBuilder('a')
+                        ->where('a.categorie = :categorie')
+                        ->setParameter('categorie', $categorie)
+                        ->andWhere('a.focus = :focus')
+                        ->setParameter('focus', 'Oui')
+                        ->getQuery() 
+                        ->setMaxResults(4)
+                        ->getResult();
+            
+            return $query;
+      }
+      
+      public function rechercheArticle($recherche, $nombreParPage, $page) {
+        
+        if ($page < 1) {
+            throw new \InvalidArgumentException('La page demandée n\'existe pas');
+        }
+          
+          $query = $this->createQueryBuilder('a')
+                  ->where('a.nom like :recherche')
+                  ->orWhere('a.reference like :recherche')
+                  ->setParameter('recherche', '%'.$recherche.'%')
+                  ->getQuery();
+                 
+        // On définit l'article à partir duquel commencer la liste
+        $query->setFirstResult(($page-1) * $nombreParPage)
+        // Ainsi que le nombre d'articles à afficher
+              ->setMaxResults($nombreParPage);
+        
+        return new Paginator($query);
+      }
 }

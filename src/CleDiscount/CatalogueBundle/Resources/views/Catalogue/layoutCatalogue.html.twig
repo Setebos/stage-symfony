@@ -53,10 +53,10 @@
             <select id = "responsive-main-nav-menu" onchange = "javascript:window.location.replace(this.value);">
             </select>
 <!--             Search form -->
-            <form id="searchForm">
+            <form method="post" id="searchForm" action="{{ path('cle_catalogue_recherche') }}">
               <fieldset>
               <div class="input">
-                <input type="text" name="s" id="s" value="Recherche" />
+                <input type="text" name="recherche" id="s" value="Recherche" />
               </div>
               <input type="submit" id="searchSubmit" value="" />
               </fieldset>

@@ -57,8 +57,8 @@
                     {% if article.categorie == "insectes" %}
                         <a href="{{ path('cle_catalogue_affichehygiene', {'categorie': 'insectes'}) }}">Insectes</a>
                     {% endif %}
-                    {% if article.categorie == "autres" %}
-                        <a href="{{ path('cle_catalogue_affichehygiene', {'categorie': 'autres'}) }}">Autres</a>
+                    {% if article.categorie == "autrehygiene" %}
+                        <a href="{{ path('cle_catalogue_affichehygiene', {'categorie': 'autrehygiene'}) }}">Autres</a>
                     {% endif %}
                         
                     {{ article.nom }}

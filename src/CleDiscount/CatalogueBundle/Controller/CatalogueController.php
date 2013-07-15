@@ -10,6 +10,23 @@ class CatalogueController extends Controller {
         return $this->render('CleDiscountCatalogueBundle:Catalogue:catalogue.html.twig');
     }
     
+    /** RECHERCHE **/
+    
+    public function rechercheAction($page, $recherche) {
+        
+        if($recherche == 'rien') {
+            $request = $this->getRequest();
+            $recherche = $request->request->get('recherche');
+        }
+        
+        $resultat = $this->getDoctrine()
+                 ->getManager()
+                 ->getRepository('CleDiscountCatalogueBundle:Article')
+                 ->rechercheArticle($recherche, 6, $page);
+        
+        return $this->render('CleDiscountCatalogueBundle:Catalogue:recherche.html.twig', array('recherche' => $recherche, 'resultat' => $resultat, 'page' => $page, 'nombrePage' => ceil(count($resultat)/6)));
+    }
+    
     /** AFFICHAGE PRODUIT **/
     
     public function produitAction($id, $famille, $categorie) {
@@ -22,14 +39,19 @@ class CatalogueController extends Controller {
     /** QUINCAILLERIE **/
     
     public function quincaillerieAction() {
-        return $this->render('CleDiscountCatalogueBundle:Catalogue:quincaillerie.html.twig');
+        
+        $em = $this->getDoctrine()->getManager();
+        
+        $focusMultipoints = $em->getRepository('CleDiscountCatalogueBundle:Article')->getArticlesFocus('multipoints');
+        
+        return $this->render('CleDiscountCatalogueBundle:Catalogue:quincaillerie.html.twig', array('focusMultipoints' => $focusMultipoints));
     }
     
     public function affichequincaillerieAction($categorie, $marque, $page) {
-        $articles = $this->getDoctrine()
-                 ->getManager()
-                 ->getRepository('CleDiscountCatalogueBundle:Article')
-                 ->getArticles(6, $page, $categorie, $marque);
+        
+        $em = $this->getDoctrine()->getManager();
+        
+        $articles = $em->getRepository('CleDiscountCatalogueBundle:Article')->getArticles(6, $page, $categorie, $marque);
         //var_dump($articles);
         
         return $this->render('CleDiscountCatalogueBundle:Catalogue:affichequincaillerie.html.twig', array('marque' => $marque, 'categorie' => $categorie, 'articles' => $articles, 'page' => $page, 'nombrePage' => ceil(count($articles)/6)));
@@ -69,6 +91,12 @@ class CatalogueController extends Controller {
     }
     
     public function lexiqueAction() {
+        $em = $this->getDoctrine()->getManager();
+        $request = $this->getRequest();
+        $recherche = $request->request->get('recherche');
+        $resultat = $em->getRepository('CleDiscountCatalogueBundle:Article')->rechercheArticle($recherche);
+        var_dump($recherche);
+        var_dump($resultat);
         return $this->render('CleDiscountCatalogueBundle:Catalogue:lexique.html.twig');
     }
     

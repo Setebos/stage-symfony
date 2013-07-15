@@ -428,27 +428,4 @@ class Article
     {
         return $this->delai;
     }
-
-    /**
-     * Set focus
-     *
-     * @param string $focus
-     * @return Article
-     */
-    public function setFocus($focus)
-    {
-        $this->focus = $focus;
-    
-        return $this;
-    }
-
-    /**
-     * Get focus
-     *
-     * @return string 
-     */
-    public function getFocus()
-    {
-        return $this->focus;
-    }
 }

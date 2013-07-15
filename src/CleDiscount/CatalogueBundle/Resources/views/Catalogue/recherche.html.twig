@@ -1,0 +1,59 @@
+{% extends "CleDiscountCatalogueBundle:Catalogue:layoutCatalogue.html.twig" %}
+
+{% block title %}
+    {{ parent()}} - Recherche
+{% endblock %}
+    
+{% block content_catalogue %}
+  <div class="container">
+    <div class="sixteen columns">
+      <div class="breadcrumbs">
+          <p><span class="bread-home"><a href="{{ path('cle_accueil_index') }}">Accueil</a></span><a href="{{ path('cle_catalogue_catalogue') }}">Catalogue</a>Recherche</p>
+      </div>
+    </div>
+  </div>
+    
+    <div class="container">
+        <p>Résultats pour la recherche "{{recherche}}" : </p>
+        {% if resultat|length > 0 %}
+            {% for article in resultat %}
+                <div class="fright">
+                    <div class="five columns">
+                        <a href="{{ path('cle_catalogue_produit', {'famille': article.famille, 'categorie': article.categorie, 'id': article.id}) }}"><img class="image-border" src="{{ article.image }}" alt="{{ article.nom }}" /></a>
+                    </div>
+                    <div class="eleven columns">
+                        <h4 class="headline">{{ article.nom }}</h4>
+                        <p>
+                            Marque : {{ article.marque }} <br/>
+                            Prix : {{ article.prixParticulier }} €
+                        </p>
+                    </div>
+                    <div class="clear"></div>
+                    <div class="sixteen columns">
+                        <div class="separator"></div>
+                    </div>    
+                </div>
+            {% endfor %}
+
+            <div class="sixteen columns">
+                <div class="pagination">
+                    <ul>
+                        {# On utilise la fonction range(a, b) qui crée un tableau de valeurs entre a et b #}
+                        {% for p in range(1, nombrePage) %}
+                            <li{% if p == page %} class="active"{% endif %}>
+                                <a href="{{ path('cle_catalogue_recherche', {'recherche': recherche, 'page': p}) }}">{{ p }}</a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>  
+            </div>
+        {% else %}
+            <div class="fright">
+                <div class="twelve columns">
+                    <h4 class="sub-title">Aucun résultat ne correspond à cette recherche</h4>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+    
+{% endblock %}
